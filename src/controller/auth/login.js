@@ -4,9 +4,9 @@ import { UserModel } from "../../model/auth/registerModal.js";
 export const userLogin = async (req,res) => {
   try {
     // Check if user exists with the provided mobile number
-    const user = await UserModel.findOne({ number: req?.body?.number });
+    const user = await UserModel.findOne({ email: req?.body?.email });
     if (!user) {
-      return res.json({ status: 400, message: "this number is not register" });
+      return res.json({ status: 400, message: "this email is not register" });
     }
 
     // Verify password
