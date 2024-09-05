@@ -8,7 +8,7 @@ export const userRegister = async (req,res) => {
 
         if (check_user_mobile) {
            return res.json ({
-                status: 400,
+                status: 405,
                 message: "Mobile number already exists"
             });
         }

@@ -18,7 +18,7 @@ export const userLogin = async (req,res) => {
     return res.json({
       status: 200,
       message: "Login successful",
-      name: user?.firstName,
+      name: user?.name,
       date: new Date().toISOString(),
       sessionId: "sessionId"
     });

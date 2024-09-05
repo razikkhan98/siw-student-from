@@ -14,11 +14,11 @@ const UserRouter = express.Router();
 UserRouter.post("/siw/register", userRegister);
 
 // User Login
-UserRouter.post("/siw/login", userLogin);
+UserRouter.post("/siw/login", userLogin); 
 
 // forms
 UserRouter.post("/siw/service_form", createForms);
-UserRouter.get("/siw/service_form", getForms);
+UserRouter.get("/siw/service_form/get", getForms);
 UserRouter.put("/siw/service_form/:id", updateForms);
 UserRouter.delete("/siw/service_form/:id", deleteForms);
 

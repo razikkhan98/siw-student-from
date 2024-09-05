@@ -3,22 +3,27 @@ import FormsModal from '../../model/formsModal/formsModal.js'
 export const createForms = async (req, res) => {
   try {
     const user = await FormsModal.create(req.body);
-    res.status(201).send(user);
+    return res.status(201).send({ status: 201, message: "Form created successfully",});
+
+
   } catch (error) {
-    res.status(400).send(error.message);
+    // return res.status(400).send(error.message);
+    // res.status(500).send("Server Error");
+    return res.status(201).send({ status: 401, message: "Server Error",});
   }
 };
 
 export const getForms = async (req, res) => {
   try {
-    const user = await FormsModal.find({parentid:req.params.id});
-    res.send(user);
+    const user = await FormsModal.find();
+    return res.send(user);
   } catch (error) {
-    res.status(500).send(error.message);
+    return res.status(500).send(error.message);
   }
 };
 
 export const updateForms = async (req, res) => {
+  
   try {
     const user = await FormsModal.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
