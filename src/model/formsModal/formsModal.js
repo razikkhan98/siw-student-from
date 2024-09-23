@@ -51,6 +51,9 @@ const UserSchema = new mongoose.Schema({
   },
   checkboxes:{
     type: Array,
+  },
+  selectedDates:{
+    type:Array
   }
 });
 
