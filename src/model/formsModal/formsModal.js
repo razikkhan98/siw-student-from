@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
   },
   studentNumber: {
-    type: String,
+    type: Number,
   },
   email: {
     type: String,
@@ -22,18 +22,36 @@ const UserSchema = new mongoose.Schema({
   address: {
     type: String,
   },
-  comment: {
+  message: {
     type: String,
   },
   alt_number: {
-    type: String,
-  },
-  id: {
-    type: String,
+    type: Number,
   },
   courses: {
     type: String,
   },
+  paymentmethod: {
+    type: String,
+  },
+  paymentmode: {
+    type: String,
+  },
+  totalamount: {
+    type: Number,
+  },
+  adjustedAmount: {
+    type: Number,
+  },
+  emiduration:{
+    type: String,
+  },
+  emiAmounts:{
+    type: Array,
+  },
+  checkboxes:{
+    type: Array,
+  }
 });
 
 export default mongoose.model("FormsModal", UserSchema);
